@@ -1,0 +1,558 @@
+2024-12-17 18:18:58,183 - INFO - Configuration loaded successfully. Data path: data
+2024-12-17 18:18:58,183 - ERROR - Error in prediction collection: [Errno 2] No such file or directory: 'data/mldata.csv'
+2024-12-17 18:18:58,188 - ERROR - Traceback (most recent call last):
+  File "scripts/collect_predictions.py", line 51, in main
+    dataset = DataPipeline(config.data.file_path)
+  File "./src/data/data_pipeline.py", line 24, in __init__
+    self.data = pd.read_csv(file_path / 'mldata.csv')
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 680, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 575, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 933, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1217, in _make_engine
+    self.handles = get_handle(  # type: ignore[call-overload]
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/pandas/io/common.py", line 789, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'data/mldata.csv'
+
+2024-12-17 18:26:47,474 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 18:27:38,034 - INFO - Data pipeline initialized
+2024-12-17 18:27:38,036 - INFO - Data shape: (3998565, 83)
+2024-12-17 18:27:38,036 - INFO - Number of features: 79
+2024-12-17 18:27:38,036 - INFO - Prediction collector initialized
+2024-12-17 18:27:38,036 - INFO - Collecting predictions for years 1989-2021
+2024-12-17 18:27:38,268 - INFO - Collecting NN3 predictions...
+2024-12-17 18:27:38,299 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras
+2024-12-17 18:27:38,628 - ERROR - Error processing NN3 for year 1989: 'DataPipeline' object has no attribute 'LoadOneYearXY'
+2024-12-17 18:27:38,629 - ERROR - Error in prediction collection: 'DataPipeline' object has no attribute 'LoadOneYearXY'
+2024-12-17 18:27:38,630 - ERROR - Traceback (most recent call last):
+  File "./src/analysis/prediction_collector.py", line 61, in collect_predictions
+    X_test, y, _ = dataset.LoadOneYearXY(year)
+AttributeError: 'DataPipeline' object has no attribute 'LoadOneYearXY'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "scripts/collect_predictions.py", line 64, in main
+    results = collector.collect_predictions(
+  File "./src/analysis/prediction_collector.py", line 66, in collect_predictions
+    X_test, y, _ = dataset.LoadOneYearXY(year)
+AttributeError: 'DataPipeline' object has no attribute 'LoadOneYearXY'
+
+2024-12-17 18:59:15,861 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 19:00:06,864 - INFO - Data pipeline initialized
+2024-12-17 19:00:06,877 - INFO - Data shape: (3998565, 83)
+2024-12-17 19:00:06,877 - INFO - Number of features: 79
+2024-12-17 19:00:06,881 - INFO - Prediction collector initialized
+2024-12-17 19:00:06,882 - INFO - Collecting predictions for years 1989-2021
+2024-12-17 19:00:07,235 - INFO - Collecting NN3 predictions...
+2024-12-17 19:00:07,299 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras
+2024-12-17 19:00:09,510 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1990.keras
+2024-12-17 19:00:10,931 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1991.keras
+2024-12-17 19:00:12,235 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1992.keras
+2024-12-17 19:00:13,630 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1993.keras
+2024-12-17 19:00:15,030 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1994.keras
+2024-12-17 19:00:16,709 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1995.keras
+2024-12-17 19:00:18,360 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1996.keras
+2024-12-17 19:00:20,154 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1997.keras
+2024-12-17 19:00:22,030 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1998.keras
+2024-12-17 19:00:23,862 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1999.keras
+2024-12-17 19:00:25,529 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2000.keras
+2024-12-17 19:00:27,082 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2001.keras
+2024-12-17 19:00:28,691 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2002.keras
+2024-12-17 19:00:30,024 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2003.keras
+2024-12-17 19:00:31,387 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2004.keras
+2024-12-17 19:00:32,753 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2005.keras
+2024-12-17 19:00:34,152 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2006.keras
+2024-12-17 19:00:35,543 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2007.keras
+2024-12-17 19:00:36,927 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2008.keras
+2024-12-17 19:00:38,558 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2009.keras
+2024-12-17 19:00:39,812 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2010.keras
+2024-12-17 19:00:41,038 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2011.keras
+2024-12-17 19:00:42,242 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2012.keras
+2024-12-17 19:00:43,417 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2013.keras
+2024-12-17 19:00:44,579 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2014.keras
+2024-12-17 19:00:45,797 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2015.keras
+2024-12-17 19:00:47,039 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2016.keras
+2024-12-17 19:00:48,261 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2017.keras
+2024-12-17 19:00:49,488 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2018.keras
+2024-12-17 19:00:50,716 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2019.keras
+2024-12-17 19:00:51,963 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2020.keras
+2024-12-17 19:00:53,231 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2021.keras
+2024-12-17 19:00:55,387 - INFO - Collecting RF predictions...
+2024-12-17 19:00:55,387 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1989.joblib
+2024-12-17 19:00:55,778 - ERROR - Error processing RF for year 1989: 255
+2024-12-17 19:00:55,903 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1990.joblib
+2024-12-17 19:00:55,905 - ERROR - Error processing RF for year 1990: 255
+2024-12-17 19:00:56,021 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1991.joblib
+2024-12-17 19:00:56,023 - ERROR - Error processing RF for year 1991: 255
+2024-12-17 19:00:56,088 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1992.joblib
+2024-12-17 19:00:56,090 - ERROR - Error processing RF for year 1992: 255
+2024-12-17 19:00:56,207 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1993.joblib
+2024-12-17 19:00:56,209 - ERROR - Error processing RF for year 1993: 255
+2024-12-17 19:00:56,341 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1994.joblib
+2024-12-17 19:00:56,342 - ERROR - Error processing RF for year 1994: 255
+2024-12-17 19:00:56,486 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1995.joblib
+2024-12-17 19:00:56,487 - ERROR - Error processing RF for year 1995: 255
+2024-12-17 19:00:56,631 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1996.joblib
+2024-12-17 19:00:56,632 - ERROR - Error processing RF for year 1996: 255
+2024-12-17 19:00:56,781 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1997.joblib
+2024-12-17 19:00:56,783 - ERROR - Error processing RF for year 1997: 255
+2024-12-17 19:00:56,941 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1998.joblib
+2024-12-17 19:00:56,942 - ERROR - Error processing RF for year 1998: 255
+2024-12-17 19:00:57,089 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1999.joblib
+2024-12-17 19:00:57,091 - ERROR - Error processing RF for year 1999: 255
+2024-12-17 19:00:57,173 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2000.joblib
+2024-12-17 19:00:57,174 - ERROR - Error processing RF for year 2000: 255
+2024-12-17 19:00:57,254 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2001.joblib
+2024-12-17 19:00:57,256 - ERROR - Error processing RF for year 2001: 255
+2024-12-17 19:00:57,331 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2002.joblib
+2024-12-17 19:00:57,333 - ERROR - Error processing RF for year 2002: 255
+2024-12-17 19:00:57,405 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2003.joblib
+2024-12-17 19:00:57,408 - ERROR - Error processing RF for year 2003: 255
+2024-12-17 19:00:57,479 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2004.joblib
+2024-12-17 19:00:57,481 - ERROR - Error processing RF for year 2004: 255
+2024-12-17 19:00:57,551 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2005.joblib
+2024-12-17 19:00:57,553 - ERROR - Error processing RF for year 2005: 255
+2024-12-17 19:00:57,622 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2006.joblib
+2024-12-17 19:00:57,625 - ERROR - Error processing RF for year 2006: 255
+2024-12-17 19:00:57,695 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2007.joblib
+2024-12-17 19:00:57,697 - ERROR - Error processing RF for year 2007: 255
+2024-12-17 19:00:57,769 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2008.joblib
+2024-12-17 19:00:57,770 - ERROR - Error processing RF for year 2008: 255
+2024-12-17 19:00:57,839 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2009.joblib
+2024-12-17 19:00:57,841 - ERROR - Error processing RF for year 2009: 255
+2024-12-17 19:00:57,905 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2010.joblib
+2024-12-17 19:00:57,907 - ERROR - Error processing RF for year 2010: 255
+2024-12-17 19:00:57,970 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2011.joblib
+2024-12-17 19:00:57,971 - ERROR - Error processing RF for year 2011: 255
+2024-12-17 19:00:58,033 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2012.joblib
+2024-12-17 19:00:58,035 - ERROR - Error processing RF for year 2012: 255
+2024-12-17 19:00:58,103 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2013.joblib
+2024-12-17 19:00:58,104 - ERROR - Error processing RF for year 2013: 255
+2024-12-17 19:00:58,166 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2014.joblib
+2024-12-17 19:00:58,167 - ERROR - Error processing RF for year 2014: 255
+2024-12-17 19:00:58,232 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2015.joblib
+2024-12-17 19:00:58,233 - ERROR - Error processing RF for year 2015: 255
+2024-12-17 19:00:58,298 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2016.joblib
+2024-12-17 19:00:58,299 - ERROR - Error processing RF for year 2016: 255
+2024-12-17 19:00:58,361 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2017.joblib
+2024-12-17 19:00:58,363 - ERROR - Error processing RF for year 2017: 255
+2024-12-17 19:00:58,424 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2018.joblib
+2024-12-17 19:00:58,425 - ERROR - Error processing RF for year 2018: 255
+2024-12-17 19:00:58,488 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2019.joblib
+2024-12-17 19:00:58,490 - ERROR - Error processing RF for year 2019: 255
+2024-12-17 19:00:58,553 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2020.joblib
+2024-12-17 19:00:58,555 - ERROR - Error processing RF for year 2020: 255
+2024-12-17 19:00:58,619 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2021.joblib
+2024-12-17 19:00:58,621 - ERROR - Error processing RF for year 2021: 255
+2024-12-17 19:01:10,612 - INFO - Results saved to /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/predictions/oos_predictions_20241217.csv
+2024-12-17 19:01:10,612 - INFO - Prediction collection completed successfully
+2024-12-17 19:24:40,016 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 19:25:31,973 - INFO - Data pipeline initialized
+2024-12-17 19:25:31,975 - INFO - Data shape: (3998565, 83)
+2024-12-17 19:25:31,975 - INFO - Number of features: 79
+2024-12-17 19:25:31,975 - INFO - Prediction collector initialized
+2024-12-17 19:25:31,976 - INFO - Collecting predictions for years 1989-2021
+2024-12-17 19:25:32,322 - INFO - Collecting NN3 predictions...
+2024-12-17 19:25:32,362 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras
+2024-12-17 19:25:34,285 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1990.keras
+2024-12-17 19:25:35,729 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1991.keras
+2024-12-17 19:25:37,021 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1992.keras
+2024-12-17 19:25:38,437 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1993.keras
+2024-12-17 19:25:39,822 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1994.keras
+2024-12-17 19:25:41,482 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1995.keras
+2024-12-17 19:25:43,177 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1996.keras
+2024-12-17 19:25:44,944 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1997.keras
+2024-12-17 19:25:46,798 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1998.keras
+2024-12-17 19:25:48,614 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1999.keras
+2024-12-17 19:25:50,292 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2000.keras
+2024-12-17 19:25:51,814 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2001.keras
+2024-12-17 19:25:53,449 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2002.keras
+2024-12-17 19:25:54,773 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2003.keras
+2024-12-17 19:25:56,190 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2004.keras
+2024-12-17 19:25:57,619 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2005.keras
+2024-12-17 19:25:59,069 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2006.keras
+2024-12-17 19:26:00,522 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2007.keras
+2024-12-17 19:26:01,935 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2008.keras
+2024-12-17 19:26:03,559 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2009.keras
+2024-12-17 19:26:04,800 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2010.keras
+2024-12-17 19:26:06,023 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2011.keras
+2024-12-17 19:26:07,274 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2012.keras
+2024-12-17 19:26:08,540 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2013.keras
+2024-12-17 19:26:09,727 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2014.keras
+2024-12-17 19:26:10,948 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2015.keras
+2024-12-17 19:26:12,207 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2016.keras
+2024-12-17 19:26:13,437 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2017.keras
+2024-12-17 19:26:14,670 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2018.keras
+2024-12-17 19:26:15,881 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2019.keras
+2024-12-17 19:26:17,117 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2020.keras
+2024-12-17 19:26:18,386 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2021.keras
+2024-12-17 19:26:20,486 - INFO - Collecting RF predictions...
+2024-12-17 19:26:20,486 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1989.joblib
+2024-12-17 19:26:20,828 - ERROR - Error processing RF for year 1989: 255
+2024-12-17 19:26:20,927 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1990.joblib
+2024-12-17 19:26:20,928 - ERROR - Error processing RF for year 1990: 255
+2024-12-17 19:26:21,039 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1991.joblib
+2024-12-17 19:26:21,041 - ERROR - Error processing RF for year 1991: 255
+2024-12-17 19:26:21,151 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1992.joblib
+2024-12-17 19:26:21,152 - ERROR - Error processing RF for year 1992: 255
+2024-12-17 19:26:21,269 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1993.joblib
+2024-12-17 19:26:21,271 - ERROR - Error processing RF for year 1993: 255
+2024-12-17 19:26:21,396 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1994.joblib
+2024-12-17 19:26:21,398 - ERROR - Error processing RF for year 1994: 255
+2024-12-17 19:26:21,531 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1995.joblib
+2024-12-17 19:26:21,533 - ERROR - Error processing RF for year 1995: 255
+2024-12-17 19:26:21,671 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1996.joblib
+2024-12-17 19:26:21,672 - ERROR - Error processing RF for year 1996: 255
+2024-12-17 19:26:21,817 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1997.joblib
+2024-12-17 19:26:21,818 - ERROR - Error processing RF for year 1997: 255
+2024-12-17 19:26:21,969 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1998.joblib
+2024-12-17 19:26:21,971 - ERROR - Error processing RF for year 1998: 255
+2024-12-17 19:26:22,115 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_1999.joblib
+2024-12-17 19:26:22,117 - ERROR - Error processing RF for year 1999: 255
+2024-12-17 19:26:22,195 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2000.joblib
+2024-12-17 19:26:22,197 - ERROR - Error processing RF for year 2000: 255
+2024-12-17 19:26:22,275 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2001.joblib
+2024-12-17 19:26:22,277 - ERROR - Error processing RF for year 2001: 255
+2024-12-17 19:26:22,351 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2002.joblib
+2024-12-17 19:26:22,353 - ERROR - Error processing RF for year 2002: 255
+2024-12-17 19:26:22,426 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2003.joblib
+2024-12-17 19:26:22,428 - ERROR - Error processing RF for year 2003: 255
+2024-12-17 19:26:22,499 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2004.joblib
+2024-12-17 19:26:22,501 - ERROR - Error processing RF for year 2004: 255
+2024-12-17 19:26:22,570 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2005.joblib
+2024-12-17 19:26:22,572 - ERROR - Error processing RF for year 2005: 255
+2024-12-17 19:26:22,640 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2006.joblib
+2024-12-17 19:26:22,642 - ERROR - Error processing RF for year 2006: 255
+2024-12-17 19:26:22,710 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2007.joblib
+2024-12-17 19:26:22,712 - ERROR - Error processing RF for year 2007: 255
+2024-12-17 19:26:22,782 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2008.joblib
+2024-12-17 19:26:22,784 - ERROR - Error processing RF for year 2008: 255
+2024-12-17 19:26:22,852 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2009.joblib
+2024-12-17 19:26:22,853 - ERROR - Error processing RF for year 2009: 255
+2024-12-17 19:26:22,917 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2010.joblib
+2024-12-17 19:26:22,919 - ERROR - Error processing RF for year 2010: 255
+2024-12-17 19:26:22,981 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2011.joblib
+2024-12-17 19:26:22,983 - ERROR - Error processing RF for year 2011: 255
+2024-12-17 19:26:23,045 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2012.joblib
+2024-12-17 19:26:23,047 - ERROR - Error processing RF for year 2012: 255
+2024-12-17 19:26:23,108 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2013.joblib
+2024-12-17 19:26:23,109 - ERROR - Error processing RF for year 2013: 255
+2024-12-17 19:26:23,169 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2014.joblib
+2024-12-17 19:26:23,171 - ERROR - Error processing RF for year 2014: 255
+2024-12-17 19:26:23,233 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2015.joblib
+2024-12-17 19:26:23,235 - ERROR - Error processing RF for year 2015: 255
+2024-12-17 19:26:23,297 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2016.joblib
+2024-12-17 19:26:23,299 - ERROR - Error processing RF for year 2016: 255
+2024-12-17 19:26:23,362 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2017.joblib
+2024-12-17 19:26:23,364 - ERROR - Error processing RF for year 2017: 255
+2024-12-17 19:26:23,423 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2018.joblib
+2024-12-17 19:26:23,425 - ERROR - Error processing RF for year 2018: 255
+2024-12-17 19:26:23,487 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2019.joblib
+2024-12-17 19:26:23,488 - ERROR - Error processing RF for year 2019: 255
+2024-12-17 19:26:23,550 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2020.joblib
+2024-12-17 19:26:23,552 - ERROR - Error processing RF for year 2020: 255
+2024-12-17 19:26:23,614 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/RF_2021.joblib
+2024-12-17 19:26:23,616 - ERROR - Error processing RF for year 2021: 255
+2024-12-17 19:26:35,735 - INFO - Results saved to /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/predictions/oos_predictions_20241217.csv
+2024-12-17 19:26:35,735 - INFO - Prediction collection completed successfully
+2024-12-17 20:38:26,976 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 20:39:17,630 - INFO - Data pipeline initialized
+2024-12-17 20:39:17,632 - INFO - Data shape: (3998565, 83)
+2024-12-17 20:39:17,632 - INFO - Number of features: 79
+2024-12-17 20:39:17,633 - INFO - Prediction collector initialized
+2024-12-17 20:39:17,633 - INFO - Collecting predictions for years 1989-2021
+2024-12-17 20:39:17,917 - INFO - Collecting NN3 predictions...
+2024-12-17 20:39:17,957 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras
+2024-12-17 20:39:19,798 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1990.keras
+2024-12-17 20:39:21,220 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1991.keras
+2024-12-17 20:39:22,530 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1992.keras
+2024-12-17 20:39:24,020 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1993.keras
+2024-12-17 20:39:25,605 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1994.keras
+2024-12-17 20:39:27,193 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1995.keras
+2024-12-17 20:39:28,870 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1996.keras
+2024-12-17 20:39:30,590 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1997.keras
+2024-12-17 20:39:32,422 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1998.keras
+2024-12-17 20:39:34,218 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1999.keras
+2024-12-17 20:39:35,838 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2000.keras
+2024-12-17 20:39:37,336 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2001.keras
+2024-12-17 20:39:38,872 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2002.keras
+2024-12-17 20:39:40,190 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2003.keras
+2024-12-17 20:39:41,506 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2004.keras
+2024-12-17 20:39:42,833 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2005.keras
+2024-12-17 20:39:44,186 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2006.keras
+2024-12-17 20:39:45,547 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2007.keras
+2024-12-17 20:39:46,882 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2008.keras
+2024-12-17 20:39:48,446 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2009.keras
+2024-12-17 20:39:49,673 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2010.keras
+2024-12-17 20:39:50,842 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2011.keras
+2024-12-17 20:39:52,008 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2012.keras
+2024-12-17 20:39:53,139 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2013.keras
+2024-12-17 20:39:54,440 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2014.keras
+2024-12-17 20:39:55,713 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2015.keras
+2024-12-17 20:39:56,979 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2016.keras
+2024-12-17 20:39:58,225 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2017.keras
+2024-12-17 20:39:59,444 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2018.keras
+2024-12-17 20:40:00,693 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2019.keras
+2024-12-17 20:40:02,040 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2020.keras
+2024-12-17 20:40:03,337 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2021.keras
+2024-12-17 20:40:05,438 - INFO - Collecting RF predictions...
+2024-12-17 20:40:05,439 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1989.joblib
+2024-12-17 20:40:20,531 - ERROR - Error processing RF for year 1989: 255
+2024-12-17 20:40:20,644 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1990.joblib
+2024-12-17 20:40:20,646 - ERROR - Error processing RF for year 1990: 255
+2024-12-17 20:40:20,755 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1991.joblib
+2024-12-17 20:40:20,757 - ERROR - Error processing RF for year 1991: 255
+2024-12-17 20:40:20,822 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1992.joblib
+2024-12-17 20:40:20,824 - ERROR - Error processing RF for year 1992: 255
+2024-12-17 20:40:20,947 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1993.joblib
+2024-12-17 20:40:20,949 - ERROR - Error processing RF for year 1993: 255
+2024-12-17 20:40:21,072 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1994.joblib
+2024-12-17 20:40:21,073 - ERROR - Error processing RF for year 1994: 255
+2024-12-17 20:40:21,208 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1995.joblib
+2024-12-17 20:40:21,210 - ERROR - Error processing RF for year 1995: 255
+2024-12-17 20:40:21,350 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1996.joblib
+2024-12-17 20:40:21,352 - ERROR - Error processing RF for year 1996: 255
+2024-12-17 20:40:21,502 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1997.joblib
+2024-12-17 20:40:21,503 - ERROR - Error processing RF for year 1997: 255
+2024-12-17 20:40:21,656 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1998.joblib
+2024-12-17 20:40:21,660 - ERROR - Error processing RF for year 1998: 255
+2024-12-17 20:40:21,808 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_1999.joblib
+2024-12-17 20:40:21,810 - ERROR - Error processing RF for year 1999: 255
+2024-12-17 20:40:21,887 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2000.joblib
+2024-12-17 20:40:21,889 - ERROR - Error processing RF for year 2000: 255
+2024-12-17 20:40:21,969 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2001.joblib
+2024-12-17 20:40:21,970 - ERROR - Error processing RF for year 2001: 255
+2024-12-17 20:40:22,050 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2002.joblib
+2024-12-17 20:40:22,051 - ERROR - Error processing RF for year 2002: 255
+2024-12-17 20:40:22,125 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2003.joblib
+2024-12-17 20:40:22,127 - ERROR - Error processing RF for year 2003: 255
+2024-12-17 20:40:22,199 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2004.joblib
+2024-12-17 20:40:22,201 - ERROR - Error processing RF for year 2004: 255
+2024-12-17 20:40:22,269 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2005.joblib
+2024-12-17 20:40:22,270 - ERROR - Error processing RF for year 2005: 255
+2024-12-17 20:40:22,339 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2006.joblib
+2024-12-17 20:40:22,340 - ERROR - Error processing RF for year 2006: 255
+2024-12-17 20:40:22,409 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2007.joblib
+2024-12-17 20:40:22,411 - ERROR - Error processing RF for year 2007: 255
+2024-12-17 20:40:22,480 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2008.joblib
+2024-12-17 20:40:22,482 - ERROR - Error processing RF for year 2008: 255
+2024-12-17 20:40:22,550 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2009.joblib
+2024-12-17 20:40:22,552 - ERROR - Error processing RF for year 2009: 255
+2024-12-17 20:40:22,615 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2010.joblib
+2024-12-17 20:40:22,617 - ERROR - Error processing RF for year 2010: 255
+2024-12-17 20:40:22,678 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2011.joblib
+2024-12-17 20:40:22,680 - ERROR - Error processing RF for year 2011: 255
+2024-12-17 20:40:22,740 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2012.joblib
+2024-12-17 20:40:22,742 - ERROR - Error processing RF for year 2012: 255
+2024-12-17 20:40:22,803 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2013.joblib
+2024-12-17 20:40:22,804 - ERROR - Error processing RF for year 2013: 255
+2024-12-17 20:40:22,863 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2014.joblib
+2024-12-17 20:40:22,865 - ERROR - Error processing RF for year 2014: 255
+2024-12-17 20:40:22,926 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2015.joblib
+2024-12-17 20:40:22,928 - ERROR - Error processing RF for year 2015: 255
+2024-12-17 20:40:22,990 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2016.joblib
+2024-12-17 20:40:22,992 - ERROR - Error processing RF for year 2016: 255
+2024-12-17 20:40:23,056 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2017.joblib
+2024-12-17 20:40:23,058 - ERROR - Error processing RF for year 2017: 255
+2024-12-17 20:40:23,120 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2018.joblib
+2024-12-17 20:40:23,122 - ERROR - Error processing RF for year 2018: 255
+2024-12-17 20:40:23,185 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2019.joblib
+2024-12-17 20:40:23,187 - ERROR - Error processing RF for year 2019: 255
+2024-12-17 20:40:23,250 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2020.joblib
+2024-12-17 20:40:23,252 - ERROR - Error processing RF for year 2020: 255
+2024-12-17 20:40:23,313 - INFO - Loading RF model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/RF_model/rf_2021.joblib
+2024-12-17 20:40:23,315 - ERROR - Error processing RF for year 2021: 255
+2024-12-17 20:40:35,482 - INFO - Results saved to /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/predictions/oos_predictions_20241217.csv
+2024-12-17 20:40:35,482 - INFO - Prediction collection completed successfully
+2024-12-17 20:43:13,745 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 20:44:19,009 - INFO - Data pipeline initialized
+2024-12-17 20:44:19,019 - INFO - Data shape: (3998565, 83)
+2024-12-17 20:44:19,019 - INFO - Number of features: 79
+2024-12-17 20:44:19,024 - INFO - Prediction collector initialized
+2024-12-17 20:44:19,024 - INFO - Collecting predictions for years 1989-2021
+2024-12-17 20:44:19,381 - INFO - Collecting NN3 predictions...
+2024-12-17 20:44:19,438 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras
+2024-12-17 20:44:21,610 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1990.keras
+2024-12-17 20:44:23,203 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1991.keras
+2024-12-17 20:44:24,707 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1992.keras
+2024-12-17 20:44:26,265 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1993.keras
+2024-12-17 20:44:27,767 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1994.keras
+2024-12-17 20:44:29,611 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1995.keras
+2024-12-17 20:44:31,382 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1996.keras
+2024-12-17 20:44:33,257 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1997.keras
+2024-12-17 20:44:35,216 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1998.keras
+2024-12-17 20:44:37,124 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1999.keras
+2024-12-17 20:44:38,895 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2000.keras
+2024-12-17 20:44:40,590 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2001.keras
+2024-12-17 20:44:42,270 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2002.keras
+2024-12-17 20:44:43,655 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2003.keras
+2024-12-17 20:44:45,178 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2004.keras
+2024-12-17 20:44:46,835 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2005.keras
+2024-12-17 20:44:48,290 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2006.keras
+2024-12-17 20:44:49,693 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2007.keras
+2024-12-17 20:44:51,184 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2008.keras
+2024-12-17 20:44:52,878 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2009.keras
+2024-12-17 20:44:54,201 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2010.keras
+2024-12-17 20:44:55,483 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2011.keras
+2024-12-17 20:44:56,742 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2012.keras
+2024-12-17 20:44:57,985 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2013.keras
+2024-12-17 20:44:59,216 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2014.keras
+2024-12-17 20:45:00,496 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2015.keras
+2024-12-17 20:45:01,778 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2016.keras
+2024-12-17 20:45:03,029 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2017.keras
+2024-12-17 20:45:04,285 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2018.keras
+2024-12-17 20:45:05,552 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2019.keras
+2024-12-17 20:45:06,836 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2020.keras
+2024-12-17 20:45:08,151 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2021.keras
+2024-12-17 20:45:10,299 - INFO - Collecting RF predictions...
+2024-12-17 20:45:10,655 - ERROR - Error processing RF for year 1989: 255
+2024-12-17 20:45:10,757 - ERROR - Error processing RF for year 1990: 255
+2024-12-17 20:45:10,871 - ERROR - Error processing RF for year 1991: 255
+2024-12-17 20:45:10,936 - ERROR - Error processing RF for year 1992: 255
+2024-12-17 20:45:11,053 - ERROR - Error processing RF for year 1993: 255
+2024-12-17 20:45:11,179 - ERROR - Error processing RF for year 1994: 255
+2024-12-17 20:45:11,316 - ERROR - Error processing RF for year 1995: 255
+2024-12-17 20:45:11,455 - ERROR - Error processing RF for year 1996: 255
+2024-12-17 20:45:11,598 - ERROR - Error processing RF for year 1997: 255
+2024-12-17 20:45:11,746 - ERROR - Error processing RF for year 1998: 255
+2024-12-17 20:45:11,889 - ERROR - Error processing RF for year 1999: 255
+2024-12-17 20:45:11,973 - ERROR - Error processing RF for year 2000: 255
+2024-12-17 20:45:12,052 - ERROR - Error processing RF for year 2001: 255
+2024-12-17 20:45:12,128 - ERROR - Error processing RF for year 2002: 255
+2024-12-17 20:45:12,200 - ERROR - Error processing RF for year 2003: 255
+2024-12-17 20:45:12,269 - ERROR - Error processing RF for year 2004: 255
+2024-12-17 20:45:12,337 - ERROR - Error processing RF for year 2005: 255
+2024-12-17 20:45:12,406 - ERROR - Error processing RF for year 2006: 255
+2024-12-17 20:45:12,476 - ERROR - Error processing RF for year 2007: 255
+2024-12-17 20:45:12,546 - ERROR - Error processing RF for year 2008: 255
+2024-12-17 20:45:12,614 - ERROR - Error processing RF for year 2009: 255
+2024-12-17 20:45:12,679 - ERROR - Error processing RF for year 2010: 255
+2024-12-17 20:45:12,741 - ERROR - Error processing RF for year 2011: 255
+2024-12-17 20:45:12,803 - ERROR - Error processing RF for year 2012: 255
+2024-12-17 20:45:12,864 - ERROR - Error processing RF for year 2013: 255
+2024-12-17 20:45:12,925 - ERROR - Error processing RF for year 2014: 255
+2024-12-17 20:45:12,986 - ERROR - Error processing RF for year 2015: 255
+2024-12-17 20:45:13,048 - ERROR - Error processing RF for year 2016: 255
+2024-12-17 20:45:13,111 - ERROR - Error processing RF for year 2017: 255
+2024-12-17 20:45:13,173 - ERROR - Error processing RF for year 2018: 255
+2024-12-17 20:45:13,234 - ERROR - Error processing RF for year 2019: 255
+2024-12-17 20:45:13,297 - ERROR - Error processing RF for year 2020: 255
+2024-12-17 20:45:13,358 - ERROR - Error processing RF for year 2021: 255
+2024-12-17 20:45:26,931 - INFO - Results saved to /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/predictions/oos_predictions_20241217.csv
+2024-12-17 20:45:26,931 - INFO - Prediction collection completed successfully
+2024-12-17 20:47:22,185 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 20:48:10,956 - INFO - Data pipeline initialized
+2024-12-17 20:48:10,957 - INFO - Data shape: (3998565, 83)
+2024-12-17 20:48:10,957 - INFO - Number of features: 79
+2024-12-17 20:48:10,957 - INFO - Prediction collector initialized
+2024-12-17 20:48:10,957 - INFO - Collecting predictions for years 1989-2021
+2024-12-17 20:48:11,234 - INFO - Collecting NN3 predictions...
+2024-12-17 20:48:11,259 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras
+2024-12-17 20:48:12,856 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1990.keras
+2024-12-17 20:48:14,267 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1991.keras
+2024-12-17 20:48:15,548 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1992.keras
+2024-12-17 20:48:16,885 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1993.keras
+2024-12-17 20:48:18,286 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1994.keras
+2024-12-17 20:48:19,926 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1995.keras
+2024-12-17 20:48:21,587 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1996.keras
+2024-12-17 20:48:23,358 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1997.keras
+2024-12-17 20:48:25,203 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1998.keras
+2024-12-17 20:48:27,028 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1999.keras
+2024-12-17 20:48:28,686 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2000.keras
+2024-12-17 20:48:30,184 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2001.keras
+2024-12-17 20:48:31,765 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2002.keras
+2024-12-17 20:48:33,077 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2003.keras
+2024-12-17 20:48:34,426 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2004.keras
+2024-12-17 20:48:35,792 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2005.keras
+2024-12-17 20:48:37,178 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2006.keras
+2024-12-17 20:48:38,549 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2007.keras
+2024-12-17 20:48:40,022 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2008.keras
+2024-12-17 20:48:41,693 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2009.keras
+2024-12-17 20:48:42,983 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2010.keras
+2024-12-17 20:48:44,241 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2011.keras
+2024-12-17 20:48:45,445 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2012.keras
+2024-12-17 20:48:46,619 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2013.keras
+2024-12-17 20:48:47,777 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2014.keras
+2024-12-17 20:48:48,992 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2015.keras
+2024-12-17 20:48:50,270 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2016.keras
+2024-12-17 20:48:51,509 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2017.keras
+2024-12-17 20:48:52,748 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2018.keras
+2024-12-17 20:48:53,948 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2019.keras
+2024-12-17 20:48:55,189 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2020.keras
+2024-12-17 20:48:56,441 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2021.keras
+2024-12-17 20:48:58,522 - INFO - Collecting RF predictions...
+2024-12-17 20:48:58,844 - ERROR - Error in prediction collection: 255
+2024-12-17 20:48:58,849 - ERROR - Traceback (most recent call last):
+  File "scripts/collect_predictions.py", line 64, in main
+    results = collector.collect_predictions(
+  File "./src/analysis/prediction_collector.py", line 81, in collect_predictions
+    y_predict = model.predict(X_test)
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/joblib/numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/joblib/numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/pickle.py", line 1210, in load
+    dispatch[key[0]](self)
+KeyError: 255
+
+2024-12-17 20:59:41,902 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 21:00:33,145 - INFO - Data pipeline initialized
+2024-12-17 21:00:33,146 - INFO - Data shape: (3998565, 83)
+2024-12-17 21:00:33,147 - INFO - Number of features: 79
+2024-12-17 21:00:33,147 - INFO - Prediction collector initialized
+2024-12-17 21:00:33,147 - INFO - Collecting predictions for years 1989-2021
+2024-12-17 21:00:33,462 - INFO - Collecting NN3 predictions...
+2024-12-17 21:00:33,492 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras
+2024-12-17 21:00:35,121 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1990.keras
+2024-12-17 21:00:36,474 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1991.keras
+2024-12-17 21:00:37,728 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1992.keras
+2024-12-17 21:00:39,081 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1993.keras
+2024-12-17 21:00:40,434 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1994.keras
+2024-12-17 21:00:42,012 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1995.keras
+2024-12-17 21:00:43,639 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1996.keras
+2024-12-17 21:00:45,356 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1997.keras
+2024-12-17 21:00:47,139 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1998.keras
+2024-12-17 21:00:48,913 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1999.keras
+2024-12-17 21:00:50,556 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2000.keras
+2024-12-17 21:00:52,040 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2001.keras
+2024-12-17 21:00:53,611 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2002.keras
+2024-12-17 21:00:54,970 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2003.keras
+2024-12-17 21:00:56,321 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2004.keras
+2024-12-17 21:00:57,648 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2005.keras
+2024-12-17 21:00:59,073 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2006.keras
+2024-12-17 21:01:00,470 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2007.keras
+2024-12-17 21:01:01,896 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2008.keras
+2024-12-17 21:01:03,535 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2009.keras
+2024-12-17 21:01:04,770 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2010.keras
+2024-12-17 21:01:05,937 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2011.keras
+2024-12-17 21:01:07,093 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2012.keras
+2024-12-17 21:01:08,254 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2013.keras
+2024-12-17 21:01:09,403 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2014.keras
+2024-12-17 21:01:10,601 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2015.keras
+2024-12-17 21:01:11,822 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2016.keras
+2024-12-17 21:01:13,015 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2017.keras
+2024-12-17 21:01:14,244 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2018.keras
+2024-12-17 21:01:15,447 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2019.keras
+2024-12-17 21:01:16,679 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2020.keras
+2024-12-17 21:01:17,893 - INFO - Loading NN3 model from: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_2021.keras
+2024-12-17 21:01:19,971 - INFO - Collecting RF predictions...
+2024-12-17 21:01:20,292 - ERROR - Error in prediction collection: 255
+2024-12-17 21:01:20,295 - ERROR - Traceback (most recent call last):
+  File "scripts/collect_predictions.py", line 64, in main
+    results = collector.collect_predictions(
+  File "./src/analysis/prediction_collector.py", line 78, in collect_predictions
+    model = load(model_path)
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/joblib/numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/site-packages/joblib/numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "/Users/zequnli/opt/anaconda3/lib/python3.8/pickle.py", line 1210, in load
+    dispatch[key[0]](self)
+KeyError: 255
+
