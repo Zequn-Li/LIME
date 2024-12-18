@@ -10,7 +10,7 @@ from datetime import datetime
 @dataclass
 class DataConfig:
     """Configuration for data processing and storage."""
-    file_path: Path = Path("/Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata")
+    file_path: Path = Path("/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata")
     start_date: str = '1963-07-01'
     end_date: str = '2021-12-31'
     wrds_username: str = None

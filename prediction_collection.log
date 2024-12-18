@@ -556,3 +556,97 @@ KeyError: 255
     dispatch[key[0]](self)
 KeyError: 255
 
+2024-12-17 23:47:26,377 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 23:47:26,378 - ERROR - Error in prediction collection: [Errno 2] No such file or directory: '/Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/mldata.csv'
+2024-12-17 23:47:26,381 - ERROR - Traceback (most recent call last):
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/scripts/collect_predictions.py", line 51, in main
+    dataset = DataPipeline(config.data.file_path)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/src/data/data_pipeline.py", line 24, in __init__
+    self.data = pd.read_csv(file_path / 'mldata.csv')
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/mldata.csv'
+
+2024-12-17 23:53:44,842 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 23:53:44,843 - ERROR - Error in prediction collection: [Errno 2] No such file or directory: '/Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/mldata.csv'
+2024-12-17 23:53:44,846 - ERROR - Traceback (most recent call last):
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/scripts/collect_predictions.py", line 51, in main
+    dataset = DataPipeline(config.data.file_path)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/src/data/data_pipeline.py", line 24, in __init__
+    self.data = pd.read_csv(file_path / 'mldata.csv')
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/mldata.csv'
+
+2024-12-17 23:59:42,770 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-17 23:59:42,772 - ERROR - Error in prediction collection: [Errno 2] No such file or directory: '/Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/mldata.csv'
+2024-12-17 23:59:42,776 - ERROR - Traceback (most recent call last):
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/scripts/collect_predictions.py", line 51, in main
+    dataset = DataPipeline(config.data.file_path)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/src/data/data_pipeline.py", line 24, in __init__
+    self.data = pd.read_csv(file_path / 'mldata.csv')
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/zequnli/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/mldata.csv'
+
+2024-12-18 00:01:13,583 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-18 00:01:36,231 - INFO - Data pipeline initialized
+2024-12-18 00:01:36,231 - INFO - Data shape: (3998565, 83)
+2024-12-18 00:01:36,231 - INFO - Number of features: 79
+2024-12-18 00:01:36,231 - INFO - Prediction collector initialized
+2024-12-18 00:01:36,231 - INFO - Collecting predictions for years 1989-2021
+2024-12-18 00:01:36,285 - INFO - Collecting NN3 predictions...
+2024-12-18 00:01:36,334 - INFO - Loading NN3 model from: /Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras
+2024-12-18 00:01:36,343 - ERROR - Error in prediction collection: File not found: filepath=/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras. Please ensure the file is an accessible `.keras` zip file.
+2024-12-18 00:01:36,357 - ERROR - Traceback (most recent call last):
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/scripts/collect_predictions.py", line 64, in main
+    results = collector.collect_predictions(
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/src/analysis/prediction_collector.py", line 59, in collect_predictions
+    model = tf.keras.models.load_model(
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/keras/src/saving/saving_api.py", line 200, in load_model
+    raise ValueError(
+ValueError: File not found: filepath=/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras. Please ensure the file is an accessible `.keras` zip file.
+
+2024-12-18 00:04:48,079 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
+2024-12-18 00:05:10,673 - INFO - Data pipeline initialized
+2024-12-18 00:05:10,674 - INFO - Data shape: (3998565, 83)
+2024-12-18 00:05:10,674 - INFO - Number of features: 79
+2024-12-18 00:05:10,674 - INFO - Prediction collector initialized
+2024-12-18 00:05:10,674 - INFO - Collecting predictions for years 1989-2021
+2024-12-18 00:05:10,733 - INFO - Collecting NN3 predictions...
+2024-12-18 00:05:10,756 - INFO - Loading NN3 model from: /Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras
+2024-12-18 00:05:10,766 - ERROR - Error in prediction collection: File not found: filepath=/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras. Please ensure the file is an accessible `.keras` zip file.
+2024-12-18 00:05:10,788 - ERROR - Traceback (most recent call last):
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/scripts/collect_predictions.py", line 64, in main
+    results = collector.collect_predictions(
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/src/analysis/prediction_collector.py", line 59, in collect_predictions
+    model = tf.keras.models.load_model(
+  File "/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LIME/.venv/lib/python3.9/site-packages/keras/src/saving/saving_api.py", line 200, in load_model
+    raise ValueError(
+ValueError: File not found: filepath=/Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata/NN3_model/NN3_1989.keras. Please ensure the file is an accessible `.keras` zip file.
+
+2024-12-18 00:07:56,757 - INFO - Configuration loaded successfully. Data path: /Users/zequnli/Library/Mobile Documents/com~apple~CloudDocs/Documents/zequnli/Education/2019SIT/ResearchData/LIMEdata
